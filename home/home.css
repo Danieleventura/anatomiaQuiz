@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+body{
+    background-color: white;
+    color: #4a4646;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    display: flex;
+    justify-content: flex-start;
+}
+.centro {
+    text-align: center;
+}
+
+.img{
+    margin-left: 100px;
+    width: 50%;
+    height: 50%;
+    margin-top: 30px;
+}
+
+img{
+    width: 500px;
+}
+
+.titulo-menu{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 50px;
+    align-items: center;
+}
+
+.container-menu{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+}
+
+.titulo{
+    font-size: 40px;
+}
+
+button{
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: #4a4646;
+    color: white;
+    border-radius: 20px;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+.spacer{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: row;
+}
+
+#icon-github img{
+    width: 40px;
+    height:40px;
+    margin-right: 10px;
+}
+
+#icon-linkedin img {
+    width: 40px;
+    height:40px;
+}
+
+#icon-github img:hover, #icon-linkedin img:hover{
+    opacity: 0.8;
+}
