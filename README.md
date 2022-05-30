@@ -10,5 +10,7 @@ Utilizando JavaScript, HTML, CSS.
 
 
 ![nome do print](/img/home.png)
+--------------------------------------------------------------
 ![nome do print](/img/quiz.png)
+--------------------------------------------------------------
 ![nome do print](/img/nivel1.png)
