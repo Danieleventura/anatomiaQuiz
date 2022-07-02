@@ -1,0 +1,205 @@
+/* Aula 20 Maia Quiz */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    color: #4a4646;
+}
+
+.quiz button{
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: #4a4646;
+    color: white;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    padding: 1rem; /* espacamento interno */
+}
+
+section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-bottom: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin: 0.625rem;
+}
+
+.centro {
+    text-align: center;
+}
+
+.questao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#numQuestao {
+    display: block;
+    background: #4a4646;
+    padding: 4px 10px 2px 10px;
+    border-radius: 50%;
+    color: white;
+}
+
+#pergunta {
+    margin-left: 1rem;
+}
+
+.questaoCerta{
+    background-color:  #6fce84;
+    color: white;
+}
+
+.questaoErrada{
+    background-color:  #f55a57;
+    color: white;
+}
+
+/* article que acomoda a questao completa */
+.questoes {
+    padding: 1.5rem;
+    border: 1px solid #ececec;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.questoes ol li {
+    display: block;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.questoes ol li:hover {
+    background: #4a4646;
+    cursor: pointer;
+    color: white;
+}
+
+.bloqueado {
+    display: none;
+}
+
+.bloqueado li:hover {
+    display: none;
+}
+
+#instrucoes {
+    background: #ccc;
+    color: #191919;
+    padding: 0.625rem;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+
+.animar {
+    animation: piscar .75s infinite alternate;
+}
+
+.aparecer {
+    animation: aparecer .5s infinite alternate;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+#certo{
+    width: 400px;
+    height: 300px;
+    background-color: #ccc;
+    position: absolute;
+    top: 150px;
+    z-index: 99;
+    border-radius: 30px;
+
+}
+.botao-next{
+    width: 50px;
+    height: 50px;
+}
+/* From uiverse.io by @alexmaracinaru */
+.next {
+    cursor: pointer;
+    font-weight: 700;
+    font-family: Helvetica,"sans-serif";
+    transition: all .2s;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background: transparent;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: white;
+    display: none;
+   }
+   
+   .next:hover {
+    background: transparent;
+   }
+   
+   .next  > svg {
+    width: 34px;
+    margin-left: 10px;
+    transition: transform .3s ease-in-out;
+    color: white;
+   }
+   
+   .next:hover svg {
+    transform: translateX(5px);
+   }
+   
+   .next:active {
+    transform: scale(0.95);
+   }
+   
+   #foto1,  #foto2,  #foto3,  #foto4,  #foto5,  #foto6,  #foto7,  #foto8,  #foto9,  #foto10{
+    width: 400px;
+    height: 400px;
+    display: none;
+   }
+
+   #foto1{
+    display: block;
+   }

@@ -76,6 +76,16 @@ h1 {
     margin-left: 1rem;
 }
 
+.questaoCerta{
+    background-color:  #6fce84;
+    color: white;
+}
+
+.questaoErrada{
+    background-color:  #f55a57;
+    color: white;
+}
+
 /* article que acomoda a questao completa */
 .questoes {
     padding: 1.5rem;
@@ -133,3 +143,55 @@ h1 {
         opacity: 1
     }
 }
+
+#certo{
+    width: 400px;
+    height: 300px;
+    background-color: #ccc;
+    position: absolute;
+    top: 150px;
+    z-index: 99;
+    border-radius: 30px;
+
+}
+.botao-next{
+    width: 50px;
+    height: 50px;
+}
+/* From uiverse.io by @alexmaracinaru */
+.next {
+    cursor: pointer;
+    font-weight: 700;
+    font-family: Helvetica,"sans-serif";
+    transition: all .2s;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background: transparent;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: white;
+    display: none;
+   }
+   
+   .next:hover {
+    background: transparent;
+   }
+   
+   .next  > svg {
+    width: 34px;
+    margin-left: 10px;
+    transition: transform .3s ease-in-out;
+    color: white;
+   }
+   
+   .next:hover svg {
+    transform: translateX(5px);
+   }
+   
+   .next:active {
+    transform: scale(0.95);
+   }
+   
+   

@@ -16,6 +16,10 @@ let a = document.querySelector('#a')
 let b = document.querySelector('#b')
 let c = document.querySelector('#c')
 
+// RESPOSTA
+let resposta2 = document.querySelector('#resposta')
+let pergunta2 = document.querySelector('#pergunta2')
+
 // article com a class questoes
 let articleQuestoes = document.querySelector('.questoes')
 // ol li com as alternativas
@@ -125,7 +129,7 @@ const questoes = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
 
 let numero = document.querySelector('#numero')
 let total  = document.querySelector('#total')
-
+let numeroDaQuestao = 1;
 numero.textContent = q1.numQuestao
 
 let totalDeQuestoes = (questoes.length)-1
@@ -144,18 +148,6 @@ a.setAttribute('value', '1A')
 b.setAttribute('value', '1B')
 c.setAttribute('value', '1C')
 
-// PARA MONTAR AS PROXIMAS QUESTOES
-function proximaQuestao(nQuestao) {
-    numero.textContent = nQuestao
-    numQuestao.textContent = questoes[nQuestao].numQuestao
-    pergunta.textContent   = questoes[nQuestao].pergunta
-    a.textContent = questoes[nQuestao].alternativaA
-    b.textContent = questoes[nQuestao].alternativaB
-    c.textContent = questoes[nQuestao].alternativaC
-    a.setAttribute('value', nQuestao+'A')
-    b.setAttribute('value', nQuestao+'B')
-    c.setAttribute('value', nQuestao+'C')
-}
 
 function bloquearAlternativas() {
     a.classList.add('bloqueado')
@@ -171,7 +163,7 @@ function desbloquearAlternativas() {
 
 function verificarSeAcertou(nQuestao, resposta) {
 
-    let numeroDaQuestao = nQuestao.value
+    numeroDaQuestao = nQuestao.value
     console.log("Questão " + numeroDaQuestao)
 
     let respostaEscolhida = resposta.textContent
@@ -179,14 +171,33 @@ function verificarSeAcertou(nQuestao, resposta) {
 
     let certa = questoes[numeroDaQuestao].correta
     //console.log("RespC " + certa)
-
+    let corCerta =  '#6fce84';
+    let corErrada = '#f55a57';
     if(respostaEscolhida == certa) {
-        //console.log("Acertou")
-        //respostaEsta.textContent = "Correta 😊"
         pontos += 10 // pontos = pontos + 10
+        if(certa == questoes[numeroDaQuestao].alternativaA){
+            a.classList.add('questaoCerta')
+        } else if(certa == questoes[numeroDaQuestao].alternativaB){
+            b.classList.add('questaoCerta')
+        } else if(certa == questoes[numeroDaQuestao].alternativaC){
+            c.classList.add('questaoCerta')
+        }
     } else {
-        //console.log("Errou!")
-        //respostaEsta.textContent = "Errada 😢"
+        if(certa == questoes[numeroDaQuestao].alternativaA){
+            a.classList.add('questaoCerta')
+        } else if(certa == questoes[numeroDaQuestao].alternativaB){
+            b.classList.add('questaoCerta')
+        } else if(certa == questoes[numeroDaQuestao].alternativaC){
+            c.classList.add('questaoCerta')
+        }
+
+        if(respostaEscolhida == questoes[numeroDaQuestao].alternativaA){
+            a.classList.add('questaoErrada')
+        } else if(respostaEscolhida == questoes[numeroDaQuestao].alternativaB){
+            b.classList.add('questaoErrada')
+        } else if(respostaEscolhida == questoes[numeroDaQuestao].alternativaC){
+            c.classList.add('questaoErrada')
+        }
     }
 
     // atualizar placar
@@ -194,9 +205,9 @@ function verificarSeAcertou(nQuestao, resposta) {
     instrucoes.textContent = "Pontos " + placar
 
     // bloquear a escolha de opcoes
-    bloquearAlternativas()
-
-    setTimeout(function() {
+    //bloquearAlternativas()
+    document.querySelector('.next').style.display = 'block';
+    /*setTimeout(function() {
         //respostaEsta.textContent = '...'
         proxima = numeroDaQuestao+1
 
@@ -207,7 +218,34 @@ function verificarSeAcertou(nQuestao, resposta) {
             proximaQuestao(proxima)
         }
     }, 250)
-    desbloquearAlternativas()
+    desbloquearAlternativas()*/
+}
+
+function proximaQuestao(){
+    proxima = numeroDaQuestao+1
+    document.querySelector('.next').style.display = 'none';
+
+    a.classList.remove('questaoCerta')
+    b.classList.remove('questaoCerta')
+    c.classList.remove('questaoCerta')
+    a.classList.remove('questaoErrada')
+    b.classList.remove('questaoErrada')
+    c.classList.remove('questaoErrada')
+        if(proxima > totalDeQuestoes) {
+            console.log('Fim do Jogo!')
+            fimDoJogo()
+        } else {
+            numero.textContent = proxima
+            numQuestao.textContent = questoes[proxima].numQuestao
+            pergunta.textContent   = questoes[proxima].pergunta
+            a.textContent = questoes[proxima].alternativaA
+            b.textContent = questoes[proxima].alternativaB
+            c.textContent = questoes[proxima].alternativaC
+            a.setAttribute('value', proxima+'A')
+            b.setAttribute('value', proxima+'B')
+            c.setAttribute('value', proxima+'C')
+        }
+       // desbloquearAlternativas()
 }
 
 function fimDoJogo() {
