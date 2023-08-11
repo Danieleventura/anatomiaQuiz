@@ -1,7 +1,8 @@
 # anatomiaQuiz
 
-Projeto desenvolvido para a disciplina: Software Educacional 2022.1 - UEPB 2021
+Projeto desenvolvido para a disciplina: Software Educacional 2022.1 - UEPB 2022
 
+- https://danieleventura.github.io/anatomiaQuiz/
 
 Quiz com questões sobre Anatomia Humana.
 
